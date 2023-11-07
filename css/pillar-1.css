@@ -8616,38 +8616,6 @@ a.theme-btn-on-bg:hover, a.theme-btn-on-bg:focus, a.theme-btn-on-bg:active, .the
   color: #58677c;
 }
 
-/*.resume-timeline {*/
-/*  padding-left: 2rem;*/
-/*}*/
-
-/*.resume-timeline:before {*/
-/*  content: "";*/
-/*  display: inline-block;*/
-/*  width: 3px;*/
-/*  height: 100%;*/
-/*  background: #aab4c3;*/
-/*  left: 6px;*/
-/*  top: 4px;*/
-/*  position: absolute;*/
-/*}*/
-
-/*.resume-timeline-item:before {*/
-/*  content: "";*/
-/*  display: inline-block;*/
-/*  position: absolute;*/
-/*  left: -32px;*/
-/*  top: 3px;*/
-/*  width: 15px;*/
-/*  height: 15px;*/
-/*  border: 4px solid #58677c;*/
-/*  background: white;*/
-/*  border-radius: 50%;*/
-/*}*/
-
-/*.resume-progress {*/
-/*  height: 0.6rem;*/
-/*}*/
-
 .resume-position__time {
   font-size: 0.875rem;
   color: #aab4c3;
@@ -8692,19 +8660,6 @@ a.theme-btn-on-bg:hover, a.theme-btn-on-bg:focus, a.theme-btn-on-bg:active, .the
   color: #434E5E;
 }
 
-@media (max-width: 767.98px) {
-  .resume-wrapper {
-    padding-top: 0;
-  }
-  .resume-header {
-    height: auto;
-  }
-  .resume-header .picture {
-    width: 120px;
-    border-radius: 4px;
-  }
-}
-
 .timeline__container {
   position: relative;
 }
@@ -8713,37 +8668,37 @@ a.theme-btn-on-bg:hover, a.theme-btn-on-bg:focus, a.theme-btn-on-bg:active, .the
   margin-bottom: 50px;
   list-style-type: none;
   display: flex;
-  flex-direction: row;
-  align-items: center;
 }
+
 .timeline__item-point {
   min-width: 20px;
   height: 20px;
   background-color: white;
   border-radius: 100%;
   z-index: 2;
-  border: 3px #434E5E solid;
+  border: 1.5px #8d9aad solid;
   position: relative;
-  left: 1px;
+  left: 80px;
 }
+
 .timeline__item-content {
-  width: 50%;
+  margin: 0 100px;
   padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-width: 1200px;
 }
-.timeline__item:nth-child(odd) .timeline__item-content {
+.timeline__item.timeline__item-content {
   padding-left: 0;
 }
-.timeline__item:nth-child(odd) .timeline__item-date {
+.timeline__item .timeline__item-date {
   padding-right: 0;
 }
-.timeline__item:nth-child(even) .timeline__item-content {
-  padding-right: 0;
-}
-.timeline__item:nth-child(even) .timeline__item-date {
-  padding-left: 0;
-}
+
 .timeline__item-date {
   width: 50%;
+  display: grid;
   padding: 0 20px;
   font-weight: normal;
 }
@@ -8751,8 +8706,6 @@ a.theme-btn-on-bg:hover, a.theme-btn-on-bg:focus, a.theme-btn-on-bg:active, .the
   max-width: 300px;
   font-size: 1rem;
   font-weight: bold;
-  text-align: center;
-  padding: 5px 10px;
   border-radius: 10px;
 }
 .timeline__item-content-title {
@@ -8767,48 +8720,22 @@ a.theme-btn-on-bg:hover, a.theme-btn-on-bg:focus, a.theme-btn-on-bg:active, .the
   font-size: 1rem;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
 }
-.timeline__item:nth-child(even) {
+.timeline__item {
   flex-direction: row-reverse;
 }
-.timeline__item:nth-child(even) .timeline__date-text {
-  float: right
-}
+
 .timeline__container::before {
   content: "";
   position: absolute;
   height: 100%;
-  width: 3px;
-  left: 50%;
-  background-color: #434E5E;
-}
-
-@media (max-width: 800px) {
-  .timeline__item-point {
-    min-width: 15px;
-    height: 15px;
-  }
-  html, body {
-    font-size: 15px;
-  }
-}
-@media (max-width: 650px) {
-  html, body {
-    font-size: 14px;
-  }
-
-  .timeline__item-point {
-    min-width: 12px;
-    height: 12px;
-  }
-}
-@media (max-width: 450px) {
-  html, body {
-    font-size: 10px;
-  }
-  p {
-    padding: 10px !important;
-  }
+  width: 1.5px;
+  left: 90px;
+  background-color: #8d9aad;
 }
 
 .thumbnail {
@@ -8821,4 +8748,31 @@ a.theme-btn-on-bg:hover, a.theme-btn-on-bg:focus, a.theme-btn-on-bg:active, .the
 
 .thumbnail:hover {
   box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
+@media (max-width: 768px) {
+  .resume-wrapper {
+    padding-top: 0;
+  }
+  .resume-header {
+    height: auto;
+  }
+  .resume-header .picture {
+    width: 120px;
+    border-radius: 4px;
+  }
+}
+
+@media (max-width: 530px) {
+  .timeline__item-content {
+    margin: 0;
+  }
+
+  .timeline__container::before {
+    left: 10px;
+  }
+
+  .timeline__item-point {
+    left: 0;
+  }
 }
